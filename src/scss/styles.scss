@@ -67,6 +67,7 @@ $desktop: 1400px;
 }
 //GENERAL styles end
 
+
 //NAV styles start
 .navigation{
   @include opensans-semibold;
@@ -258,6 +259,7 @@ nav ul{
   }
 }
 //NAV styles end
+
 
 //HEADER styles start
 .header{
@@ -459,6 +461,7 @@ nav ul{
 }
 //HEADER styles end
 
+
 //Social Media styles start
 .social-media{
   @include opensans-regular;
@@ -550,6 +553,7 @@ nav ul{
 }
 //Social Media styles end
 
+
 //SUBLIST styles start
 .sublist{
   @include opensans-regular;
@@ -576,6 +580,12 @@ nav ul{
     img{
       max-width: 550px;
       width: 100%;
+      transition: transform 0.6s;
+
+      &:hover {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+      }
     }
 
     @media (max-width: $tablet){
@@ -676,3 +686,94 @@ nav ul{
   }
 }
 //SUBLIST styles end
+
+
+//PICTURE styles start
+.picture{
+  @include opensans-regular;
+  background-color: $color-grey;
+
+  .section-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 95px 15px;
+
+    @media (max-width: $tablet){
+      padding: 55px 15px;
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+  }
+
+  &__image{
+    flex-basis: 50%;
+    -webkit-filter: drop-shadow(15px 15px 15px $color-grey-darker);
+    filter: drop-shadow(15px 15px 15px $color-grey-darker);
+
+    img{
+      max-width: 550px;
+      width: 100%;
+      margin-right: 50px;
+      transition: transform 0.6s;
+
+      &:hover {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+      }
+    }
+
+    @media (max-width: $tablet){
+      flex-basis: 100%;
+      padding: 10px;
+      margin: 0 auto;
+    }
+  }
+
+  &__content{
+    flex-basis: 50%;
+    margin-right: 50px;
+
+    @media (max-width: $tablet){
+      flex-basis: 100%;
+      margin-right: 0;
+    }
+
+    &-title{
+      margin-bottom: 25px;
+
+      @media (max-width : $tablet){
+        margin: 20px;
+        text-align: center;
+      }
+    }
+
+    &-line{
+      background-color: $color-orange;
+      height: 3px;
+      width: 80px;
+      margin-bottom: 25px;
+
+      @media (max-width : $tablet){
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-text{
+      font-size: 18px;
+      opacity: .7;
+      margin-bottom: 30px;
+
+      @media (max-width : $tablet){
+        text-align: center;
+        font-size: 17px;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 16px;
+      }
+    }
+  }
+}
+//PICTURE styles end
