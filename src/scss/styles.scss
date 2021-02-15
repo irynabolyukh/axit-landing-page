@@ -276,7 +276,7 @@ nav ul{
     height: 100vh;
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
+    padding: 10px 15px;
 
     @media (max-width : $tablet){
       flex-direction: column;
@@ -717,7 +717,7 @@ nav ul{
     filter: drop-shadow(15px 15px 15px $color-grey-darker);
 
     img{
-      max-width: 550px;
+      max-width: 450px;
       width: 100%;
       margin-right: 50px;
       transition: transform 0.6s;
@@ -1010,3 +1010,190 @@ nav ul{
   }
 }
 //REVIEWS styles end
+
+
+//DOWNLOAD styles start
+.download{
+  background: url('../images/download.png') no-repeat 100% 100%;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  padding: 75px;
+
+  &__content{
+    color: $color-white;
+    margin: 0 auto!important;
+    text-align: center;
+
+    &-title{
+      font-weight: 400;
+      font-size: 42px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+
+      @media (max-width : $tablet){
+        font-size: 30px!important;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 25px!important;
+      }
+    }
+
+    &-line{
+      background-color: $color-white;
+      height: 3px;
+      width: 80px;
+      margin: 0 auto 25px;
+
+      @media (max-width : $tablet){
+        margin: 0 auto;
+        margin-bottom: 40px;
+      }
+    }
+
+    &-text{
+      font-weight: 300;
+      font-size: 20px;
+      opacity: .75;
+      margin-bottom: 50px;
+
+      @media (max-width : $tablet){
+        font-size: 18px!important;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 15px!important;
+      }
+    }
+
+    &-btn{
+      color: $color-white;
+      text-decoration: none;
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 20px;
+      border: 2px solid $color-white;
+      padding: 10px 35px;
+      
+      &:hover{
+        background-color: black;
+      }
+
+      @media (max-width : $tablet){
+        font-size: 18px!important;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 15px!important;
+      }
+    }
+  }
+}
+//DOWNLOAD styles end
+
+
+//CONTACT styles start
+.contact{
+  @include opensans-regular;
+
+  .section-inner{
+    padding: 85px 15px;
+    text-align: center;
+
+    @media (max-width: $mobile){
+      padding: 55px 15px;
+    }
+  }
+
+  &__title{
+    @include raleway-regular;
+    font-size: 38px;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile){
+      font-size: 32px;
+    }
+  }
+
+  &__line{
+    margin: 25px auto;
+    background-color: $color-orange;
+    height: 3px;
+    width: 80px;
+  }
+
+  &__subtitle{
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 50px;
+
+    @media (max-width: $mobile){
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form{
+    &-input, &-text{
+      @include opensans-regular;
+      font-size: 16px;
+      padding-top: 30px;
+      border: none;
+      color: #000000;
+      border-bottom: 2px solid $color-grey;
+      &::placeholder { 
+        opacity: .7; 
+      }
+    }
+
+    &-container{
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      @media (max-width: $tablet){
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &-1, &-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: 45%;
+
+        @media (max-width: $tablet){
+          padding: 0 20px;
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+
+  &__btn{
+    color: $color-white;
+    background-color: $color-orange;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 18px;
+    border: 2px solid $color-white;
+    border-radius: 7px;
+    padding: 10px 25px;
+    
+    &:hover{
+      background-color: black;
+    }
+
+    @media (max-width : $tablet){
+      font-size: 16px!important;
+    }
+
+    @media (max-width : $mobile){
+      font-size: 14px!important;
+    }
+  }
+
+}
+//CONTACT styles end
