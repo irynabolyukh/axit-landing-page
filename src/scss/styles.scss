@@ -276,7 +276,7 @@ nav ul{
     height: 100vh;
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
+    padding: 10px 15px;
 
     @media (max-width : $tablet){
       flex-direction: column;
@@ -1010,3 +1010,83 @@ nav ul{
   }
 }
 //REVIEWS styles end
+
+
+//DOWNLOAD styles start
+.download{
+  background: url('../images/download.png') no-repeat 100% 100%;
+  background-size: cover;
+  font-family: 'Raleway', sans-serif;
+  padding: 75px;
+
+  &__content{
+    color: $color-white;
+    margin: 0 auto!important;
+    text-align: center;
+
+    &-title{
+      font-weight: 400;
+      font-size: 50px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+
+      @media (max-width : $tablet){
+        font-size: 40px!important;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 25px!important;
+      }
+    }
+
+    &-line{
+      background-color: $color-white;
+      height: 3px;
+      width: 80px;
+      margin: 0 auto 25px;
+
+      @media (max-width : $tablet){
+        margin: 0 auto;
+        margin-bottom: 40px;
+      }
+    }
+
+    &-text{
+      font-weight: 300;
+      font-size: 25px;
+      opacity: .75;
+      margin-bottom: 50px;
+
+      @media (max-width : $tablet){
+        font-size: 20px!important;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 15px!important;
+      }
+    }
+
+    &-btn{
+      color: $color-white;
+      text-decoration: none;
+      font-family: 'Open Sans';
+      font-weight: 600;
+      font-size: 22px;
+      border: 2px solid $color-white;
+      padding: 10px 35px;
+      
+      &:hover{
+        background-color: black;
+      }
+
+      @media (max-width : $tablet){
+        font-size: 20px!important;
+      }
+
+      @media (max-width : $mobile){
+        font-size: 15px!important;
+      }
+    }
+  }
+}
+//DOWNLOAD styles end
