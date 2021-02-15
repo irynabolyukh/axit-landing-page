@@ -877,3 +877,131 @@ nav ul{
   }
 }
 //ABOUT styles end
+
+
+//REVIEWS styles start
+.reviews{
+  @include opensans-regular;
+
+  .section-inner{
+    padding: 85px 15px;
+    text-align: center;
+
+    @media (max-width: $mobile){
+      padding: 55px 15px;
+    }
+  }
+
+  &__title{
+    @include raleway-regular;
+    font-size: 38px;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile){
+      font-size: 32px;
+    }
+  }
+
+  &__line{
+    margin: 25px auto;
+    background-color: $color-orange;
+    height: 3px;
+    width: 80px;
+  }
+
+  &__subtitle{
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 60px;
+
+    @media (max-width: $mobile){
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: $tablet){
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__review{
+    margin-right: 10px;
+    margin-bottom: 50px;
+
+    @media (max-width: $tablet){
+      margin: 0 auto 50px;
+    }
+    
+    &-author{
+      display: flex;
+      flex-direction: row;
+
+      &-avatar{
+          max-width: 70px;
+          width: 100%;
+          margin: 10px 20px;
+
+  
+          @media (max-width: $tablet){
+            max-width: 65px;
+          }
+  
+          @media (max-width: $mobile){
+            max-width: 60px;
+          }
+      }
+  
+      &-name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 10px;
+        text-align: left;
+  
+        @media (max-width: $mobile){
+          font-size: 14px;
+        }
+
+        p{
+          padding-top: 3px;
+          opacity: .7;
+        }
+      }
+    }
+
+    &-text{
+      max-width: 350px;
+      width: 100%;
+      font-size: 18px;
+      opacity: 0.7;
+      margin: 0 auto 20px;
+      background: $color-grey;
+      position: relative;
+      padding: 20px 10px;
+      text-align: left;
+      font-style: italic;
+
+      @media (max-width: $mobile){
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      &:after {
+        content: " ";
+        position: absolute;
+        bottom: -20px;
+        left: calc(10% + 7px);
+        border: 10px solid rgba(0,0,0,0);
+        border-top-color: #f5f5f5;
+      }
+    }
+  }
+}
+//REVIEWS styles end
