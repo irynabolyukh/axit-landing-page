@@ -717,7 +717,7 @@ nav ul{
     filter: drop-shadow(15px 15px 15px $color-grey-darker);
 
     img{
-      max-width: 450px;
+      max-width: 550px;
       width: 100%;
       margin-right: 50px;
       transition: transform 0.6s;
@@ -1129,7 +1129,7 @@ nav ul{
 
     @media (max-width: $mobile){
       font-size: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
   }
 
@@ -1143,7 +1143,12 @@ nav ul{
       border-bottom: 2px solid $color-grey;
       &::placeholder { 
         opacity: .7; 
+
+        @media (max-width: $mobile){
+          font-size: 14px;
+        }
       }
+      
     }
 
     &-container{
@@ -1178,7 +1183,6 @@ nav ul{
     font-family: 'Open Sans';
     font-weight: 600;
     font-size: 18px;
-    border: 2px solid $color-white;
     border-radius: 7px;
     padding: 10px 25px;
     
@@ -1197,3 +1201,58 @@ nav ul{
 
 }
 //CONTACT styles end
+
+
+//FOOTER styles start
+.footer{
+  background-color: black;
+  padding: 10px 3px;
+
+  .section-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__icons{
+    margin-bottom: 10px;
+    display: flex;
+    flex-basis: 50%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 25px;
+    text-decoration: none;
+    padding-top: 15px;
+
+    @media (max-width: $tablet){
+      flex-basis: 70%;
+      font-size: 20px;
+    }
+
+    a{
+      color: $color-grey;
+
+      &:hover{
+        color: $color-orange;
+      }
+    }
+  }
+
+  &__copy {
+    text-align: center;
+    color: $color-white;
+    opacity: 0.7;
+    font-size: 14px;
+    letter-spacing: .7px;
+
+    @media (max-width: $mobile){
+      font-size: 12px;
+    }
+  }
+}
+//FOOTER styles end
