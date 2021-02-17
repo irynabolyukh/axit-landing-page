@@ -43,15 +43,15 @@ const paths = {
   },
   images: {
     src: "src/images/*.png",
-    ignore: ["!src/images/icons/**/*"],
+    ignore: ["!src/meta/*"],
     dest: {
       prod: `${dist.prod}/images`,
       dev: `${dist.dev}/images`
     }
   },
   icons: {
-    src: "src/images/icons/**/*",
-    dest: `${dist.prod}/images/icons`
+    src: "src/meta/*",
+    dest: `${dist.prod}/meta/*`
   }
 };
 
