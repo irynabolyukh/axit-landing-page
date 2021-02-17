@@ -306,7 +306,7 @@ nav ul{
 
     &-title{
       font-weight: 700;
-      font-size: 150px;
+      font-size: 140px;
       margin-bottom: 10px;
 
       span{
@@ -327,7 +327,7 @@ nav ul{
       font-weight: 400;
       font-size: 50px;
       text-transform: uppercase;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       max-width: 750px;
       width: 100%;
 
@@ -344,7 +344,7 @@ nav ul{
       background-color: $color-white;
       height: 3px;
       width: 80px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
 
       @media (max-width : $tablet){
         margin: 0 auto;
@@ -537,13 +537,15 @@ nav ul{
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    align-items: center;
     font-size: 45px;
     text-decoration: none;
-    padding-top: 15px;
 
     @media (max-width: $tablet){
       flex-basis: 100%;
       font-size: 40px;
+      padding-top: 15px;
+      justify-content: space-evenly;
     }
 
     @media (max-width: $mobile){
@@ -561,6 +563,161 @@ nav ul{
 
 }
 //Social Media styles end
+
+
+//FEATURES styles start
+.features{
+  @include opensans-regular;
+  background-color: $color-grey;
+
+  .section-inner{
+    padding: 55px 15px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @media only screen and (min-width: $tablet){ 
+      padding: 95px 15px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+ 
+  &__tabs{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+    flex-basis: 100%;
+  
+    label{
+      flex-basis:30%;
+      color:#fff;
+      background:#333;
+      text-align:center;
+      height:50px;
+      line-height:50px;
+      margin-right:10px;
+      font-weight:700;
+      transition:all .2s linear;
+      text-transform: uppercase;
+  
+      &:last-child{
+        margin-right: 0 !important;
+      }
+  
+      &:hover{
+        background:#ff8c2d;
+        cursor:pointer;
+      }
+    }
+  
+    input[type=radio]{
+      display:none;
+      transition:all .2s linear;
+  
+      &:checked+label{
+        background:$color-orange;
+      }
+    }
+  
+    &-description{
+      @include opensans-regular;
+      flex-basis: 60%;
+      margin-top:30px;
+      display:flex;
+      flex-flow:column nowrap;
+      justify-content: center;
+      align-items: center;
+    
+      .tabs-text{
+        order:2;
+        margin-top:5px;
+        max-width: 500px;
+        width: 100%;
+      
+        h2{
+          font-size:22px;
+          margin: 15px 0;
+
+          @media (max-width: $mobile){
+            font-size: 20px;
+          }
+        }
+      
+        div{
+          opacity: 0.6;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-size: 17px;
+    
+          &:last-of-type{
+            margin-bottom: 40px;
+          }
+  
+          @media (max-width: $mobile){
+            font-size: 16px;
+          }
+        }
+      }
+    
+      .feature-image{
+        order:1;
+        text-align:center;
+      
+        img{
+          margin:0 auto;
+          max-width: 300px;
+          width:100%;
+        }
+      }
+    }
+
+    @media only screen and (min-width: $tablet){
+        flex-basis:10%;
+        display:flex;
+        flex-flow:column nowrap!important;
+    
+        label{
+          text-align:center;
+          margin-bottom:2px;
+          width:100px;
+          height:100px;
+          line-height:100px;
+          margin-left:0
+        }
+    
+        &-description{
+          flex-flow:row nowrap;
+          flex-basis:90%;
+          margin-left:30px;
+          margin-top:0;
+          text-align: left;
+      
+          .tabs-text{
+            margin-top:0;
+            flex-basis:60%;
+            order:1;
+
+            h2 {
+              margin-top: 0;
+            }
+      
+            div{
+              font-size:18px;
+              margin-bottom: 20px !important;
+            }
+          }
+      
+          .feature-image{
+            margin-left:20px;
+            flex-basis:40%;
+          }
+        
+      }
+    }
+  }
+}
+//FEATURES styles end
 
 
 //SUBLIST styles start
@@ -1357,6 +1514,7 @@ nav ul{
     @media (max-width: $tablet){
       flex-basis: 70%;
       font-size: 20px;
+      justify-content: space-evenly;
     }
 
     a{
@@ -1381,179 +1539,3 @@ nav ul{
   }
 }
 //FOOTER styles end
-
-
-
-
-
-
-
-
-
-
-//FEATURES styles start
-.features{
-  @include opensans-regular;
-  background-color: $color-grey;
-
-  .section-inner{
-    padding: 95px 15px;
-    display: flex;
-    flex-direction: row;
-
-    @media (max-width: $tablet){
-      padding: 55px 15px;
-    }
-  }
- 
-}
-
-.tabs{
-  display:flex;
-  flex-flow:row nowrap;
-  justify-content:space-between;
-  // width:100%;
-  flex-basis: 20%;
-
-  label{
-    flex-basis:33.3%;
-    color:#fff;
-    background:#333;
-    text-align:center;
-    height:50px;
-    line-height:50px;
-    margin-left:2px;
-    font-weight:700;
-    transition:all .2s linear;
-
-    &:hover{
-      background:#ff8c2d;
-      cursor:pointer;
-    }
-  }
-
-  input[type=radio]{
-    appearance:none;
-    display:none;
-    transition:all .2s linear;
-
-    &:checked+label{
-      background:#ff8c2d;
-    }
-  }
-}
-
-.tabs-description{
-  flex-basis: 60%;
-  margin-top:30px;
-  display:flex;
-  flex-flow:column nowrap;
-}
-  
-.tabs-description .tabs-text{
-  order:2;
-  margin-top:5px;
-
-  h3{
-    font-size:20px;
-    margin-top:0;
-  }
-
-  p{
-    color:#b7b7ba;
-    margin-bottom: 20px;
-  }
-}
-
-.tabs-description .tabs-text p:first-child{
-  margin-top:15px;
-}
-
-.tabs-description .feature-image{
-  order:1;
-  text-align:center;
-}
-
-.feature-image img{
-  margin:0 auto;
-  width:80%;
-}
-
-.tabs-text .download-button{
-    color: $color-white;
-    background-color: $color-orange;
-    text-decoration: none;
-    font-family: 'Open Sans';
-    font-weight: 600;
-    font-size: 18px;
-    border-radius: 7px;
-    padding: 10px 25px;
-    
-    &:hover{
-      background-color: black;
-    }
-
-    @media (max-width : $tablet){
-      font-size: 16px!important;
-    }
-
-    @media (max-width : $mobile){
-      font-size: 14px!important;
-    }
-
-}
-  
-
-@media only screen and (min-width:768px){
-  .tabs{
-    flex-basis:10%;
-    display:flex;
-    flex-flow:column nowrap;
-
-    label{
-      text-align:center;
-      margin-bottom:2px;
-      width:100px;
-      height:100px;
-      line-height:100px;
-      margin-left:0
-    }
-  }
-  
-  .tabs-description{
-    flex-flow:row nowrap;
-    flex-basis:90%;
-    margin-left:30px;
-    margin-top:0;
-  }
-  
-  .tabs-description .tabs-text{
-    margin-top:0;
-    flex-basis:60%;
-    order:1;
-  }
-  
-  .tabs-description .tabs-text h3{
-    font-size:18px;
-  }
-  
-  .tabs-description .feature-image{
-    margin-left:20px;
-    flex-basis:40%;
-    position:relative;
-  }
-  
-  .tabs-description .feature-image img{
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    margin:auto;
-    width:100%;
-    float:right;
-    max-width:320px;
-  }
-}
-
-//FEATURES styles end
