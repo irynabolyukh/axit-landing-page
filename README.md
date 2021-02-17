@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# AXIT
-=======
 # AXIT landing
 ### **_gulp project_**
 
@@ -15,4 +12,3 @@
 * run **_npm install_**
 * then **_gulp serve_** 
 * go to **_localhost:8080/_**
->>>>>>> 8f28ef38a732ea470e7ab22218734678d8280814
