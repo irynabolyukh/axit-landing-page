@@ -14,6 +14,7 @@ const del = require("del");
 const rename = require("gulp-rename");
 
 const htmlmin = require('gulp-htmlmin');
+const imagemin = require('gulp-imagemin');
 
 const sass = require("gulp-sass");
 // const less = require("gulp-less");
@@ -30,7 +31,6 @@ const dist = {
 const paths = {
   styles: {
     src: "src/scss/*.scss",
-    // src: "src/less/*.less",
     ignore: [],
     dest: {
       prod: `${dist.prod}/css`,
@@ -42,16 +42,16 @@ const paths = {
     dest: `${dist.prod}`
   },
   images: {
-    src: "src/img/**/*",
-    ignore: ["!src/img/icons/**/*"],
+    src: "src/images/*.png",
+    ignore: ["!src/images/icons/**/*"],
     dest: {
-      prod: `${dist.prod}/img`,
-      dev: `${dist.dev}/img`
+      prod: `${dist.prod}/images`,
+      dev: `${dist.dev}/images`
     }
   },
   icons: {
-    src: "src/img/icons/**/*",
-    dest: `${dist.prod}/img/icons`
+    src: "src/images/icons/**/*",
+    dest: `${dist.prod}/images/icons`
   }
 };
 
@@ -60,7 +60,6 @@ function buildCSS() {
     src([paths.styles.src, ...paths.styles.ignore])
     .pipe(mode.development(sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    // .pipe(less().on('error', console.error.bind(console)))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(rename({suffix: '.min'}))
     .pipe(mode.development(sourcemaps.write()))
@@ -77,6 +76,15 @@ function minHTML() {
     src(paths.html.src)
     .pipe(htmlmin({ collapseWhitespace: true}))
     .pipe(dest(paths.html.dest))
+  );
+}; 
+
+function minIMAGES() {
+  return (
+    src(paths.images.src)
+    .pipe(imagemin())
+    .pipe(mode.development(dest(paths.images.dest.dev)))
+    .pipe(mode.production(dest(paths.images.dest.prod)))
   );
 }; 
 
@@ -109,5 +117,5 @@ function serve() {
 
 exports.buildCSS = buildCSS;
 
-exports.serve = series(buildCSS, serve);
-exports.publish = series(cleanDist, minHTML, copyIcons, buildCSS);
+exports.serve = series(buildCSS, minIMAGES, serve);
+exports.publish = series(cleanDist, minHTML, copyIcons, buildCSS, minIMAGES);
