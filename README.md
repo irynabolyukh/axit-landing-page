@@ -1,6 +1,8 @@
 # AXIT landing
 ### **_gulp project_**
 
+https://axit-layout-irynabolyukh-iq3frhriy.vercel.app
+
 * flexbox
 * images optimization
 * og tags
